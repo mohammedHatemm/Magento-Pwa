@@ -1,0 +1,12 @@
+type StoreInfoOutput @doc(description: "store information out put " {
+     store_name: String @doc(description: "store name from configuration ")
+     store_phone: String @doc(description: "store phone number")
+     store_email: String @doc(description: "store email address")
+     store_address: String @doc(description: "store street address")
+}
+
+type Query{
+     StoreInfo: StoreInfoOutput
+        @resolver(class:"Elsherif\\StoreInfo\\Model\\Resolver\\StoreInfo")
+        @doc(description: "get store information from StoreInfo module")
+        }
